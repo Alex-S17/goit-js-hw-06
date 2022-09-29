@@ -14,15 +14,29 @@ const images = [
 ];
 
 
-const arrayOfItems = [];
 const list = document.querySelector('.gallery');
 
-for (const image of images) {
+const arrayOfItems = images.map(image => {
   const currentItem = document.createElement('li');
-  const imageString = `<img src="${image.url}" alt="${image.alt}" />`;
+  const imageString = `<img src="${image.url}" alt="${image.alt}" width="500" />`;
   currentItem.insertAdjacentHTML("beforeend", imageString);
-  arrayOfItems.push(currentItem);
-}
+  return currentItem;
+})
+
 list.append(...arrayOfItems);
 
 
+
+
+
+// ANOTHER solution: it uses "for...off" for making iteration of array
+
+// const arrayOfItems = [];
+// const list = document.querySelector('.gallery');
+
+// for (const image of images) {
+//   const currentItem = document.createElement('li');
+//   const imageString = `<img src="${image.url}" alt="${image.alt}" width="500" />`;
+//   currentItem.insertAdjacentHTML("beforeend", imageString);
+//   arrayOfItems.push(currentItem);
+// }

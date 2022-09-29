@@ -28,6 +28,7 @@ button {
   gap: 50px;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 
 
